@@ -26,6 +26,3 @@ Built with custom vanilla web technologies, focusing on high performance, dark m
 
 ---
 
-<p align="center">
-  Designed & Developed by <strong>Saurabh Giri</strong>
-</p>
