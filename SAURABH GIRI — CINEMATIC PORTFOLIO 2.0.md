@@ -1,21 +1,3 @@
-# SAURABH GIRI — CINEMATIC PORTFOLIO 2.0
-## HIGH-END INTERACTIVE EXPERIENCE + PRODUCTION-GRADE ARCHITECTURE
-
-You are working on an existing portfolio website for **Saurabh Giri**.
-
-The current website already has the correct overall identity, content structure, sections, and information architecture.
-
-**DO NOT throw away the current website.**
-
-Instead, treat the current version as **Version 1.0** and evolve it into **Version 2.0 — a visually exceptional, cinematic, highly interactive personal portfolio.**
-
-The goal is:
-
-> Keep the personality and information of the current website, but dramatically elevate the design, motion, interaction, responsiveness, performance, and technical architecture.
-
-This should feel like a website that could genuinely compete with high-end Awwwards-style creative portfolios while remaining usable, accessible, fast, and professional.
-
----
 
 # 01 — ABSOLUTE RULE
 
