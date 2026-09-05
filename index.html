@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en" class="theme-auto">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ── SEO ─────────────────────────────────────────────── -->
+  <title>Saurabh Giri — Security, Code, Design</title>
+  <meta name="description"
+    content="Saurabh Giri — cybersecurity and digital forensics student working across code, UI/UX design, web development and photography. Kathmandu, Nepal.">
+  <meta name="author" content="Saurabh Giri">
+  <meta name="keywords"
+    content="Saurabh Giri, Cybersecurity, Digital Forensics, UI UX Design, Web Development, Programming, Portfolio, Nepal">
+  <link rel="canonical" href="https://REPLACE-WITH-DOMAIN.example/">
+  <meta name="robots" content="index, follow">
+
+  <!-- ── OPEN GRAPH ──────────────────────────────────────── -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Saurabh Giri — Security, Code, Design">
+  <meta property="og:description"
+    content="Cybersecurity × Digital Forensics × Code × Design. A digital identity, not a template.">
+  <meta property="og:url" content="https://REPLACE-WITH-DOMAIN.example/">
+  <meta property="og:image" content="/assets/images/og-cover.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Saurabh Giri — Security, Code, Design">
+  <meta name="twitter:description" content="Cybersecurity × Digital Forensics × Code × Design.">
+
+  <!-- ── FAVICON ────────────────────────────────────────── -->
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2309090B'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='18' fill='%23C6862E' text-anchor='middle'%3ESG%3C/text%3E%3C/svg%3E">
+
+  <!-- ── FONTS ──────────────────────────────────────────── -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+
+  <!-- ── CSS ────────────────────────────────────────────── -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <!-- ── STRUCTURED DATA ────────────────────────────────── -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Saurabh Giri",
+  "jobTitle": "Cybersecurity & Digital Forensics Student",
+  "url": "https://REPLACE-WITH-DOMAIN.example/",
+  "sameAs": [
+    "https://github.com/saurabbbb",
+    "https://instagram.com/saurabbbb_"
+  ],
+  "knowsAbout": ["Cybersecurity", "Digital Forensics", "Web Development", "UI/UX Design", "Programming"]
+}
+</script>
+</head>
+
+<body>
+
+  <!-- ── SKIP LINK ─────────────────────────────────────── -->
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- ── PRELOADER ─────────────────────────────────────── -->
+  <div id="preloader" role="status" aria-label="Loading">
+    <p class="pre-logo" data-text="S.G">S<span>.</span>G</p>
+    <p class="pre-status">System Initializing</p>
+    <div class="pre-bar-wrap">
+      <div class="pre-bar"></div>
+    </div>
+  </div>
+
+  <!-- ── CUSTOM CURSOR (desktop only) ──────────────────── -->
+  <div id="cursor-dot" aria-hidden="true"></div>
+  <div id="cursor-ring" aria-hidden="true">
+    <span class="cursor-label" aria-hidden="true">VIEW<br>CASE</span>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════
+     NAVIGATION
+     ══════════════════════════════════════════════════ -->
+  <header class="site-nav" role="banner">
+    <div class="nav-progress" id="navProgress" role="progressbar" aria-label="Reading progress" aria-valuemin="0"
+      aria-valuemax="100"></div>
+    <div class="nav-inner">
+      <a class="brand" href="#home" aria-label="Saurabh Giri — back to top">
+        <span class="brand-dot" aria-hidden="true"></span>
+        S. GIRI
+      </a>
+
+      <nav aria-label="Primary navigation">
+        <ul class="nav-links" id="navLinks" role="list">
+          <li role="listitem"><a href="#home"><span class="num" aria-hidden="true">01</span>Home</a></li>
+          <li role="listitem"><a href="#about"><span class="num" aria-hidden="true">02</span>About</a></li>
+          <li role="listitem"><a href="#expertise"><span class="num" aria-hidden="true">03</span>Expertise</a></li>
+          <li role="listitem"><a href="#work"><span class="num" aria-hidden="true">04</span>Work</a></li>
+          <li role="listitem"><a href="#journey"><span class="num" aria-hidden="true">05</span>Journey</a></li>
+          <li role="listitem"><a href="#beyond"><span class="num" aria-hidden="true">06</span>Beyond</a></li>
+          <li role="listitem"><a href="#contact"><span class="num" aria-hidden="true">07</span>Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-controls">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme">◐</button>
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks"
+          aria-label="Open navigation menu">☰</button>
+        <button class="nav-close" id="navClose" aria-label="Close navigation menu" style="display:none;">✕</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ══════════════════════════════════════════════════
+     SIDE NAV INDICATOR (desktop)
+     ══════════════════════════════════════════════════ -->
+  <nav id="side-nav" aria-label="Section indicator">
+    <a class="side-nav-item active" href="#home" data-section="home">
+      <span class="sn-dot"></span><span class="sn-label">Home</span>
+    </a>
+    <a class="side-nav-item" href="#about" data-section="about">
+      <span class="sn-dot"></span><span class="sn-label">About</span>
+    </a>
+    <a class="side-nav-item" href="#expertise" data-section="expertise">
+      <span class="sn-dot"></span><span class="sn-label">Expertise</span>
+    </a>
+    <a class="side-nav-item" href="#work" data-section="work">
+      <span class="sn-dot"></span><span class="sn-label">Work</span>
+    </a>
+    <a class="side-nav-item" href="#journey" data-section="journey">
+      <span class="sn-dot"></span><span class="sn-label">Journey</span>
+    </a>
+    <a class="side-nav-item" href="#beyond" data-section="beyond">
+      <span class="sn-dot"></span><span class="sn-label">Beyond</span>
+    </a>
+    <a class="side-nav-item" href="#contact" data-section="contact">
+      <span class="sn-dot"></span><span class="sn-label">Contact</span>
+    </a>
+  </nav>
+
+  <!-- ══════════════════════════════════════════════════
+     MAIN CONTENT
+     ══════════════════════════════════════════════════ -->
+  <main id="main">
+
+    <!-- 01 — HOME / HERO ─────────────────────────────── -->
+    <section id="home" class="hero">
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="hero-spot" id="heroSpot" aria-hidden="true"></div>
+      <div class="hero-ambient" aria-hidden="true"></div>
+      <div class="wrap hero-inner">
+        <!-- Forensic metadata tag -->
+        <p class="case-tag" aria-hidden="true">
+          SUBJECT <b id="tagName"></b>
+          &nbsp;·&nbsp; STATUS <b>ACTIVE</b>
+          &nbsp;·&nbsp; FIELD <b id="tagField"></b>
+        </p>
+        <!-- Availability badge -->
+        <p class="hero-status" aria-hidden="true">
+          <span class="hero-status-dot"></span>
+          Available for collaboration · Kathmandu, Nepal
+        </p>
+        <!-- Main heading — populated and split by JS -->
+        <h1 id="heroName"></h1>
+        <!-- Typing role row -->
+        <div class="hero-role-typing" id="heroRoleTyping" aria-label="Current discipline">
+          <span class="tr-label">Currently:</span>
+          <span class="tr-word" id="trWord"></span><span class="typing-cursor" aria-hidden="true"></span>
+        </div>
+        <!-- Role chips row (hidden visually, screen readers see it) -->
+        <p class="hero-role sr-only" id="heroRole"
+          aria-label="Disciplines: Cybersecurity, Digital Forensics, Code, Design"></p>
+        <!-- Personal statement -->
+        <p class="hero-desc" id="heroDesc"></p>
+        <!-- CTAs -->
+        <div class="hero-cta">
+          <a href="#work" class="btn btn-primary btn-magnetic" data-cursor-target="link">
+            View the work <span class="btn-arrow" aria-hidden="true">→</span>
+          </a>
+          <a href="#contact" class="btn btn-ghost  btn-magnetic" data-cursor-target="link">
+            Get in touch
+          </a>
+        </div>
+      </div>
+      <!-- Forensic coords (decorative) -->
+      <div class="hero-coords" aria-hidden="true" id="heroCoords">
+        <span id="coordX">X: 000.00</span><br>
+        <span id="coordY">Y: 000.00</span><br>
+        <span>KTM · 27.7172° N</span>
+      </div>
+      <!-- Scroll indicator -->
+      <div class="scroll-cue" aria-hidden="true">
+        <span class="sc-line"></span>Scroll
+      </div>
+    </section>
+
+    <!-- 02 — ABOUT ───────────────────────────────────── -->
+    <section id="about">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">02 / About</p>
+          <h2>Four disciplines, one habit of mind.</h2>
+          <div class="ruler" aria-hidden="true"></div>
+        </div>
+        <div class="about-grid">
+          <div class="about-copy reveal">
+            <p><strong>Saurabh Giri</strong> studies digital forensics and cybersecurity, and spends the rest of his
+              time building the software, interfaces and images that sit on the other side of that discipline. The two
+              halves inform each other: understanding how a system can be broken changes how you build one, and building
+              things well is what makes their failure modes worth studying in the first place.</p>
+            <p>He works comfortably across <strong>C, C++ and Python</strong>, moves into <strong>UI/UX and
+                Photoshop</strong> when a problem is visual, and treats <strong>web development</strong> as the place
+              all of it gets shipped. Photography runs alongside as a separate, quieter practice a way of paying
+              attention that has nothing to do with a screen's logic at all.</p>
+            <p>None of this is presented as finished expertise. It is a student's portfolio, built the way the work
+              itself is built: carefully, in public, one project at a time.</p>
+          </div>
+          <div>
+            <div id="pillars" class="about-pillars"></div>
+            <div class="edu-card reveal" id="eduCard"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 — EXPERTISE ───────────────────────────────── -->
+    <section id="expertise">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">03 / Expertise</p>
+          <h2>An evidence board, not a scorecard.</h2>
+          <p>No self-rated percentages — select a field to see the tools and the project work behind it.</p>
+          <div class="ruler" aria-hidden="true"></div>
+        </div>
+        <div class="board reveal" id="board" role="list" aria-label="Expertise fields"></div>
+        <div class="board-forensic reveal" aria-hidden="true">
+          OBSERVE · TRACE · ANALYZE · UNDERSTAND
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 — WORK ────────────────────────────────────── -->
+    <section id="work">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">04 / Work</p>
+          <h2>Case files, not thumbnails.</h2>
+          <div class="ruler" aria-hidden="true"></div>
+        </div>
+        <div class="filters reveal" id="filters" role="tablist" aria-label="Filter work by category"></div>
+        <div id="workPanels"></div>
+      </div>
+    </section>
+
+    <!-- 05 — JOURNEY ────────────────────────────────── -->
+    <section id="journey">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">05 / Journey</p>
+          <h2>How the pieces arrived.</h2>
+          <div class="ruler" aria-hidden="true"></div>
+        </div>
+        <div id="timeline"></div>
+      </div>
+    </section>
+
+    <!-- 06 — BEYOND ─────────────────────────────────── -->
+    <section id="beyond">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">06 / Beyond the Screen</p>
+          <h2>What the work doesn't show.</h2>
+          <div class="ruler" aria-hidden="true"></div>
+        </div>
+        <div class="beyond-grid" id="beyondGrid"></div>
+      </div>
+    </section>
+
+    <!-- 07 — CONTACT ────────────────────────────────── -->
+    <section id="contact">
+      <div class="wrap contact-grid">
+
+        <div class="contact-head reveal">
+          <p class="eyebrow">07 / Contact</p>
+          <h2>Have something<br>worth building?</h2>
+          <p>Open to conversations about security, development, design or photography — academic, experimental, or
+            otherwise.</p>
+          <div class="contact-links" id="contactLinks" aria-label="Social links and contact"></div>
+        </div>
+
+        <form class="contact-form-wrap reveal reveal-delay-2" id="contactForm" novalidate>
+
+          <!-- Honeypot — hidden from real users, filled by bots -->
+          <div class="hp-field" aria-hidden="true">
+            <label for="website">Leave this blank</label>
+            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+          </div>
+
+          <div class="form-field" id="f-name">
+            <label for="cf-name">Name</label>
+            <input id="cf-name" name="name" type="text" autocomplete="name" required aria-required="true"
+              aria-describedby="err-name">
+            <p class="err-text" id="err-name" role="alert">Please enter your name.</p>
+          </div>
+
+          <div class="form-field" id="f-email">
+            <label for="cf-email">Email</label>
+            <input id="cf-email" name="email" type="email" autocomplete="email" required aria-required="true"
+              aria-describedby="err-email">
+            <p class="err-text" id="err-email" role="alert">Please enter a valid email address.</p>
+          </div>
+
+          <div class="form-field" id="f-interest">
+            <label for="cf-interest">What are you interested in?</label>
+            <select id="cf-interest" name="interest" required aria-required="true" aria-describedby="err-interest">
+              <option value="">Select one</option>
+              <option>Web development</option>
+              <option>Security / forensics</option>
+              <option>UI/UX design</option>
+              <option>Photography</option>
+              <option>Something else</option>
+            </select>
+            <p class="err-text" id="err-interest" role="alert">Please choose an option.</p>
+          </div>
+
+          <div class="form-field" id="f-message">
+            <label for="cf-message">Message</label>
+            <textarea id="cf-message" name="message" required rows="5" aria-required="true"
+              aria-describedby="err-message"></textarea>
+            <p class="err-text" id="err-message" role="alert">Please add a short message.</p>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-submit btn-magnetic" id="submitBtn">
+            <span class="btn-submit-inner">
+              <span class="btn-text-default">Send Message <span class="btn-arrow">→</span></span>
+              <span class="btn-text-sending">Sending…</span>
+              <span class="btn-text-ok">✓ Message Sent</span>
+              <span class="btn-text-err">✕ Couldn't Send — Try Again</span>
+            </span>
+          </button>
+
+          <p class="form-msg" id="formMsg" role="status" aria-live="polite"></p>
+        </form>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════════════════════════
+     FOOTER
+     ══════════════════════════════════════════════════ -->
+  <footer>
+    <div class="wrap">
+      <div class="footer-stats" id="footerStats" aria-hidden="true"></div>
+      <div class="footer-inner">
+        <p>© <span id="year"></span> Saurabh Giri. Built from zero, on purpose.</p>
+        <a href="#home" class="back-top" aria-label="Back to top">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ══════════════════════════════════════════════════
+     LIGHTBOX
+     ══════════════════════════════════════════════════ -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" aria-hidden="true">
+    <button class="lb-close" id="lbClose" aria-label="Close photo viewer">✕</button>
+    <button class="lb-nav prev" id="lbPrev" aria-label="Previous photo">←</button>
+    <button class="lb-nav next" id="lbNext" aria-label="Next photo">→</button>
+    <div class="lb-inner">
+      <div class="lb-ph" id="lbImg" role="img" aria-label="Photo placeholder"></div>
+      <div class="lb-cap">
+        <span id="lbCap"></span>
+        <span id="lbCount"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════
+     CASE STUDY OVERLAY
+     ══════════════════════════════════════════════════ -->
+  <div class="case-study-overlay" id="caseStudyOverlay" role="dialog" aria-modal="true" aria-label="Case study"
+    aria-hidden="true">
+    <div class="case-study-panel" id="caseStudyPanel" tabindex="-1"></div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════
+     JAVASCRIPT
+     Order matters: data → main → animations → interactions → contact
+     ══════════════════════════════════════════════════ -->
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- GSAP + ScrollTrigger (free public CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+
+  <script src="js/animations.js" defer></script>
+  <script src="js/interactions.js" defer></script>
+  <script src="js/contact.js" defer></script>
+
+</body>
+
+</html>

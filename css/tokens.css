@@ -1,0 +1,114 @@
+/* ============================================================
+   TOKENS — Saurabh Giri Portfolio 2.0
+   Single source of truth for all design values.
+   ============================================================ */
+:root {
+
+  /* ── COLOUR PALETTE ─────────────────────────────────────── */
+  --bg:            #09090B;   /* void black */
+  --surface:       #111113;   /* lifted surface */
+  --surface-2:     #18181B;   /* elevated card */
+  --surface-3:     #1F1F23;   /* highest card */
+  --border:        #27272A;   /* structural border */
+  --border-soft:   #1C1C1F;   /* whisper border */
+  --border-accent: rgba(198,134,46,.22);
+
+  --text-1:        #FAFAFA;   /* primary — near white */
+  --text-2:        #A1A1AA;   /* secondary — zinc 400 */
+  --text-3:        #52525B;   /* tertiary — zinc 600 */
+  --text-4:        #3F3F46;   /* ghost — zinc 700 */
+
+  --accent:        #C6862E;   /* amber gold — trace evidence */
+  --accent-h:      #DA9A47;   /* hover tint */
+  --accent-dim:    #8F6021;   /* dimmed */
+  --accent-soft:   rgba(198,134,46,.10);
+  --accent-glow:   rgba(198,134,46,.06);
+
+  --slate:         #3E6E82;   /* forensic slate-teal — analysis */
+  --slate-soft:    rgba(62,110,130,.12);
+
+  --danger:        #A2452F;
+  --danger-soft:   rgba(162,69,47,.14);
+  --success:       #3E6E82;
+  --success-soft:  rgba(62,110,130,.14);
+
+  /* ── TYPOGRAPHY ─────────────────────────────────────────── */
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body:    'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono:    'IBM Plex Mono', ui-monospace, 'Cascadia Code', monospace;
+
+  --text-xs:   11px;
+  --text-sm:   13px;
+  --text-base: 16px;
+  --text-md:   18px;
+  --text-lg:   22px;
+
+  /* ── SPACING ─────────────────────────────────────────────── */
+  --gutter:      clamp(20px, 5vw, 72px);
+  --max-w:       1280px;
+  --section-py:  clamp(96px, 14vw, 160px);
+  --radius-sm:   2px;
+  --radius:      4px;
+  --radius-md:   8px;
+
+  /* ── EASING ──────────────────────────────────────────────── */
+  --ease:        cubic-bezier(.16,.84,.44,1);
+  --ease-out:    cubic-bezier(0,.55,.45,1);
+  --ease-expo:   cubic-bezier(.87,0,.13,1);
+  --ease-back:   cubic-bezier(.34,1.56,.64,1);
+  --ease-spring: cubic-bezier(.5,-.5,.5,1.5);
+
+  /* ── SHADOWS ─────────────────────────────────────────────── */
+  --shadow-sm:  0 1px 3px rgba(0,0,0,.4);
+  --shadow:     0 4px 16px rgba(0,0,0,.5);
+  --shadow-lg:  0 16px 48px rgba(0,0,0,.65);
+  --shadow-xl:  0 32px 80px rgba(0,0,0,.8);
+  --glow-accent:0 0 24px rgba(198,134,46,.15);
+
+  /* ── Z-INDEX ─────────────────────────────────────────────── */
+  --z-behind:   -1;
+  --z-base:      0;
+  --z-raised:    10;
+  --z-nav:       100;
+  --z-cursor:    900;
+  --z-overlay:   200;
+  --z-lightbox:  300;
+  --z-preloader: 999;
+}
+
+/* Light theme overrides */
+html.theme-light,
+@media (prefers-color-scheme: light) {
+  html.theme-auto {
+    --bg:          #F4F3F0;
+    --surface:     #FFFFFF;
+    --surface-2:   #ECEAE5;
+    --surface-3:   #E2DFD8;
+    --border:      #DDDAD3;
+    --border-soft: #E8E5DE;
+    --text-1:      #111113;
+    --text-2:      #4B5157;
+    --text-3:      #7A8087;
+    --text-4:      #A0A6AD;
+    --accent-soft: rgba(198,134,46,.12);
+    --accent-glow: rgba(198,134,46,.04);
+    --shadow:      0 4px 16px rgba(0,0,0,.1);
+    --shadow-lg:   0 16px 48px rgba(0,0,0,.15);
+  }
+}
+html.theme-light {
+  --bg:          #F4F3F0;
+  --surface:     #FFFFFF;
+  --surface-2:   #ECEAE5;
+  --surface-3:   #E2DFD8;
+  --border:      #DDDAD3;
+  --border-soft: #E8E5DE;
+  --text-1:      #111113;
+  --text-2:      #4B5157;
+  --text-3:      #7A8087;
+  --text-4:      #A0A6AD;
+  --accent-soft: rgba(198,134,46,.12);
+  --accent-glow: rgba(198,134,46,.04);
+  --shadow:      0 4px 16px rgba(0,0,0,.1);
+  --shadow-lg:   0 16px 48px rgba(0,0,0,.15);
+}

@@ -1,0 +1,141 @@
+/* ============================================================
+   RESPONSIVE — Mobile / tablet / wide breakpoints
+   ============================================================ */
+
+/* ── SIDE NAV (hide on small screens) ────────────────────── */
+@media (max-width: 1080px) {
+  #side-nav { display: none; }
+}
+
+/* ── CURSOR (disable on touch) ────────────────────────────── */
+@media (pointer: coarse) {
+  #cursor-dot,
+  #cursor-ring { display: none; }
+  * { cursor: auto !important; }
+}
+
+/* ── TABLET ──────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  /* Hero */
+  .hero h1 { font-size: clamp(3.2rem, 10vw, 6.5rem); }
+
+  /* About */
+  .about-grid { grid-template-columns: 1fr; gap: 56px; }
+
+  /* Expertise */
+  .board { grid-template-columns: 1fr 1fr; }
+  .node-panel-inner { grid-template-columns: 1fr; gap: 24px; }
+
+  /* Work */
+  .cred-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* ── LARGE MOBILE ────────────────────────────────────────── */
+@media (max-width: 768px) {
+  :root { --section-py: clamp(72px, 10vw, 96px); }
+
+  /* Nav */
+  .nav-links {
+    position: fixed;
+    inset: 0;
+    background: var(--bg);
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 80px var(--gutter) 40px;
+    gap: 0;
+    transform: translateX(100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform .55s var(--ease-expo), opacity .4s var(--ease);
+    z-index: calc(var(--z-nav) - 1);
+  }
+  .nav-links.open {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .nav-links li {
+    width: 100%;
+    overflow: hidden;
+  }
+  .nav-links a {
+    font-size: clamp(1.8rem, 8vw, 2.8rem) !important;
+    padding: 14px 0 !important;
+    border-bottom: 1px solid var(--border-soft);
+    letter-spacing: -.01em;
+    font-family: var(--font-display) !important;
+    font-style: italic;
+    opacity: 0;
+    transform: translateX(30px);
+    transition: opacity .4s var(--ease), transform .4s var(--ease), color .2s;
+  }
+  .nav-links.open a {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .nav-links.open li:nth-child(1) a { transition-delay: .05s; }
+  .nav-links.open li:nth-child(2) a { transition-delay: .10s; }
+  .nav-links.open li:nth-child(3) a { transition-delay: .15s; }
+  .nav-links.open li:nth-child(4) a { transition-delay: .20s; }
+  .nav-links.open li:nth-child(5) a { transition-delay: .25s; }
+  .nav-links.open li:nth-child(6) a { transition-delay: .30s; }
+  .nav-links.open li:nth-child(7) a { transition-delay: .35s; }
+
+  .nav-toggle { display: flex !important; }
+  .nav-close   { display: flex !important; }
+
+  /* Hero */
+  .hero h1 { font-size: clamp(2.8rem, 13vw, 5rem); }
+  .hero-role { font-size: 12px; gap: 6px 10px; }
+  .hero-cta { flex-direction: column; gap: 10px; }
+  .hero-cta .btn { justify-content: center; }
+
+  /* Expertise */
+  .board { grid-template-columns: 1fr; }
+
+  /* Work */
+  .project-list-item { grid-template-columns: 44px 1fr; }
+  .pli-meta { display: none; }
+
+  /* Contact */
+  .contact-grid { grid-template-columns: 1fr; gap: 56px; }
+  .contact-head h2 { font-size: clamp(2rem, 8vw, 3rem); }
+
+  /* Photography */
+  .photo-masonry { column-count: 2; }
+
+  /* Cred grid */
+  .cred-grid { grid-template-columns: 1fr; }
+
+  /* Beyond */
+  .beyond-grid { grid-template-columns: 1fr 1fr; }
+
+  /* Footer */
+  .footer-inner { flex-direction: column; align-items: flex-start; gap: 20px; }
+}
+
+/* ── SMALL MOBILE ────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .photo-masonry { column-count: 1; }
+  .beyond-grid   { grid-template-columns: 1fr; }
+  .grid-2        { grid-template-columns: 1fr; }
+  .cred-grid     { grid-template-columns: 1fr; }
+  .hero-cta      { gap: 8px; }
+  .btn { padding: 12px 18px; font-size: 12px; }
+}
+
+/* ── REDUCED MOTION overrides (animation-specific) ────────── */
+@media (prefers-reduced-motion: reduce) {
+  .hero-word-inner {
+    transform: translateY(0) !important;
+    opacity: 1 !important;
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  #cursor-dot,
+  #cursor-ring { display: none; }
+  .side-nav-item .sn-label { opacity: 1; transform: none; }
+}

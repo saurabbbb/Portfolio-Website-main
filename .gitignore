@@ -1,0 +1,17 @@
+# PHP config — contains email credentials, never push this
+php/config.php
+
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor folders
+.vscode/
+.idea/
+
+# Node (if ever used)
+node_modules/
+
+# Composer (if PHPMailer ever added)
+vendor/
