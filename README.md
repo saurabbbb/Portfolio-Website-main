@@ -1,26 +1,31 @@
 # Saurabh Giri — Portfolio
 
-Personal portfolio website built with HTML, CSS, and JavaScript.
+Welcome to the official repository for my personal portfolio website.
 
 🌐 **Live Website:** [girisaurabh.com.np](https://girisaurabh.com.np)
 
 ---
 
-## 📁 Key Files
+## 🚀 Overview
 
-- `index.html` — Main page layout
-- `js/data.js` — All portfolio content (bio, projects, skills, certifications, links)
-- `js/contact.js` — Contact form integration (Formspree AJAX)
-- `css/` — Design tokens and stylesheets
+This portfolio showcases my background, projects, certifications, and skills across:
+- **Cybersecurity & Digital Forensics**
+- **Software Development & Systems**
+- **UI/UX & Modern Web Engineering**
 
----
-
-## ⚙️ Updating Content
-
-Edit [`js/data.js`](js/data.js) to update your bio, projects, skills, and social links. No build steps or frameworks required.
+Built with custom vanilla web technologies, focusing on high performance, dark mode aesthetics, dynamic motion, and responsive design.
 
 ---
 
-## 📬 Contact Form
+## 🛠️ Tech Stack
 
-Form submissions are sent to Formspree (`https://formspree.io/f/myeydznl`) configured in [`js/contact.js`](js/contact.js).
+- **HTML5 & CSS3** (Custom design tokens & responsive layout system)
+- **JavaScript (ES6+)** (Dynamic rendering & interactive logic)
+- **GSAP & ScrollTrigger** (Smooth motion & scroll animations)
+- **Formspree** (Secure serverless contact form delivery)
+
+---
+
+<p align="center">
+  Designed & Developed by <strong>Saurabh Giri</strong>
+</p>
