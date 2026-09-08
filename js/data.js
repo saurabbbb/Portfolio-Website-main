@@ -190,7 +190,7 @@ const DATA = {
   socials: [
     { label: "GitHub",    handle: "@saurabbbb",   url: "https://github.com/saurabbbb",     placeholder: false },
     { label: "Instagram", handle: "@saurabbbb_",  url: "https://instagram.com/saurabbbb_", placeholder: false },
-    { label: "LinkedIn",  handle: "Add profile",  url: "#",                                placeholder: true  }
+    { label: "LinkedIn",  handle: "Saurabh Giri",  url: "https://www.linkedin.com/in/saurabh-giri-78b13233b/",  placeholder: false  }
   ],
 
   email: {
