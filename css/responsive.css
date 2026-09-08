@@ -88,7 +88,6 @@
   /* Hero */
   .hero h1 { font-size: clamp(2.8rem, 13vw, 5rem); }
   .hero-role { font-size: 12px; gap: 6px 10px; }
-  .hero-quote { font-size: 0.98rem; max-width: 44ch; margin-top: 18px; }
   .hero-cta { flex-direction: column; gap: 10px; }
   .hero-cta .btn { justify-content: center; }
 
@@ -96,10 +95,8 @@
   .board { grid-template-columns: 1fr; }
 
   /* Work */
-  .project-list-item { grid-template-columns: 44px 1fr !important; }
-  .project-list-item:not(:has(.pli-thumb)) { grid-template-columns: 44px 1fr !important; }
+  .project-list-item { grid-template-columns: 44px 1fr; }
   .pli-meta { display: none; }
-  .pli-thumb { display: none; }
 
   /* Contact */
   .contact-grid { grid-template-columns: 1fr; gap: 56px; }
@@ -113,10 +110,6 @@
 
   /* Beyond */
   .beyond-grid { grid-template-columns: 1fr 1fr; }
-
-  /* Journey */
-  .tl-item { grid-template-columns: 40px 1fr !important; gap: 0 16px !important; padding-bottom: 36px !important; }
-  .tl-items-col::before { left: 19px !important; }
 
   /* Footer */
   .footer-inner { flex-direction: column; align-items: flex-start; gap: 20px; }
@@ -145,5 +138,4 @@
   #cursor-dot,
   #cursor-ring { display: none; }
   .side-nav-item .sn-label { opacity: 1; transform: none; }
-  .hero-quote { opacity: 1 !important; animation: none !important; }
 }

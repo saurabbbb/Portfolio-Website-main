@@ -8,7 +8,7 @@ const DATA = {
   person: {
     name:      "Saurabh Giri",
     role:      ["Cybersecurity", "Digital Forensics", "Code", "Design"],
-    statement: "Studying security, building things, and designing what matters.",
+    statement: "I study how systems fail, then build the ones that shouldn't.",
     location:  "Kathmandu, Nepal",
     subtitle:  "Security × Forensics × Code × Design"
   },
@@ -190,7 +190,7 @@ const DATA = {
   socials: [
     { label: "GitHub",    handle: "@saurabbbb",   url: "https://github.com/saurabbbb",     placeholder: false },
     { label: "Instagram", handle: "@saurabbbb_",  url: "https://instagram.com/saurabbbb_", placeholder: false },
-    { label: "LinkedIn",  handle: "Saurabh Giri",  url: "https://www.linkedin.com/in/saurabh-giri-78b13233b/",  placeholder: false  }
+    { label: "LinkedIn",  handle: "Add profile",  url: "#",                                placeholder: true  }
   ],
 
   email: {

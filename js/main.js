@@ -148,48 +148,11 @@ function renderHero() {
     `<span>${r}</span>`
   ).join(' ');
 
-  // Daily quote
-  renderDailyQuote();
+  // Statement
+  $('#heroDesc').textContent = DATA.person.statement;
 }
 
-/* ── Daily Rotating Quote ─────────────────────────────────── */
-function renderDailyQuote() {
-  const el = $('#heroQuote');
-  if (!el) return;
-
-  const quotes = [
-    "The quieter you become, the more you can hear.",
-    "Security is not a product, but a continuous process.",
-    "Observe, trace, analyze, and understand.",
-    "Simplicity is the prerequisite for reliability.",
-    "Understanding how systems fail is the first step to building them right.",
-    "First, solve the problem. Then, write the code.",
-    "Great design is making something complex feel intuitive.",
-    "Curiosity is the engine of technical insight.",
-    "The details are not just details — they define the craftsmanship.",
-    "The art of programming is the art of organizing complexity.",
-    "Build carefully, in public, one project at a time.",
-    "Done thoughtfully is better than rushed and fragile.",
-    "What you see is only the surface — trace the logic beneath.",
-    "Clear code, sound security, and deliberate design.",
-    "Every expert was once a student asking questions.",
-    "Good security makes resilience possible, not just defenses.",
-    "Design and code: two sides of how ideas meet reality.",
-    "In the middle of difficulty lies opportunity.",
-    "Make it work, make it right, make it resilient.",
-    "A habit of mind: curious, systematic, and patient."
-  ];
-
-  // Pick quote based on day of year so it rotates daily
-  const now = new Date();
-  const start = new Date(now.getFullYear(), 0, 0);
-  const dayOfYear = Math.floor((now - start) / 86400000);
-  const q = quotes[dayOfYear % quotes.length];
-
-  el.innerHTML = `<span class="hero-quote-text">${q}</span>`;
-}
-
-
+/* ── Typing Role Cycling ─────────────────────────────────── */
 function initTypingRole() {
   const wordEl = $('#trWord');
   if (!wordEl) return;
@@ -701,16 +664,52 @@ function renderJourney() {
     </div>
   `;
 
-  // Highlight active dot as user scrolls through milestones
-  const items = $$('.tl-item', container);
+  // Animate dots on scroll
+  const items = $$('.tl-item');
   const obs = new IntersectionObserver(entries => {
     entries.forEach(en => {
-      if (en.isIntersecting) {
-        en.target.classList.add('active');
-      }
+      en.target.classList.toggle('active', en.isIntersecting);
     });
-  }, { threshold: 0.25 });
+  }, { threshold: 0.4 });
   items.forEach(el => obs.observe(el));
+
+  // Animated SVG line that draws as user scrolls
+  initTimelineLine(container);
+}
+
+function initTimelineLine(container) {
+  // Wait for DOM paint
+  requestAnimationFrame(() => {
+    const col = container.querySelector('.tl-items-col');
+    if (!col) return;
+    const h = col.offsetHeight;
+    if (!h) return;
+
+    // Create SVG
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('id', 'tl-line-svg');
+    svg.setAttribute('width', '2');
+    svg.setAttribute('height', h);
+    svg.setAttribute('viewBox', `0 0 2 ${h}`);
+    svg.setAttribute('aria-hidden', 'true');
+    svg.innerHTML = `
+      <line id="tl-line-track" x1="1" y1="0" x2="1" y2="${h}" />
+      <line id="tl-line-progress" x1="1" y1="0" x2="1" y2="${h}"
+            stroke-dasharray="${h}" stroke-dashoffset="${h}" />`;
+    container.appendChild(svg);
+
+    const progress = svg.querySelector('#tl-line-progress');
+
+    function updateLine() {
+      const rect  = container.getBoundingClientRect();
+      const total = rect.height;
+      const vis   = Math.max(0, Math.min(total, window.innerHeight - rect.top));
+      const pct   = Math.min(1, vis / total);
+      progress.style.strokeDashoffset = h * (1 - pct);
+    }
+    window.addEventListener('scroll', updateLine, { passive: true });
+    updateLine();
+  });
 }
 
 /* ══════════════════════════════════════════════════════════
@@ -730,6 +729,33 @@ function renderBeyond() {
     </div>
   `).join('');
 
+  // 3D tilt effect on beyond cards
+  initTiltCards();
+}
+
+
+function initTiltCards() {
+  const isTouch = window.matchMedia('(pointer: coarse)').matches;
+  if (isTouch || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  $$('.beyond-card').forEach(card => {
+    const MAX_TILT = 8;
+    card.addEventListener('mousemove', e => {
+      const rect = card.getBoundingClientRect();
+      const cx   = rect.left + rect.width  / 2;
+      const cy   = rect.top  + rect.height / 2;
+      const dx   = (e.clientX - cx) / (rect.width  / 2);
+      const dy   = (e.clientY - cy) / (rect.height / 2);
+      card.style.transform = `perspective(600px) rotateX(${-dy * MAX_TILT}deg) rotateY(${dx * MAX_TILT}deg) translateZ(8px)`;
+      card.style.setProperty('--mx', ((e.clientX - rect.left) / rect.width * 100) + '%');
+      card.style.setProperty('--my', ((e.clientY - rect.top) / rect.height * 100) + '%');
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = '';
+      card.style.transition = 'transform .6s cubic-bezier(.34,1.56,.64,1), background .3s';
+      setTimeout(() => { card.style.transition = ''; }, 600);
+    });
+  });
 }
 
 /* ══════════════════════════════════════════════════════════
