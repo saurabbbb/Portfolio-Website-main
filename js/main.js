@@ -148,9 +148,6 @@ function renderHero() {
     `<span>${r}</span>`
   ).join(' ');
 
-  // Statement
-  $('#heroDesc').textContent = DATA.person.statement;
-
   // Daily quote
   renderDailyQuote();
 }
