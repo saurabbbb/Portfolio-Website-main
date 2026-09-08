@@ -150,9 +150,59 @@ function renderHero() {
 
   // Statement
   $('#heroDesc').textContent = DATA.person.statement;
+
+  // Daily quote
+  renderDailyQuote();
 }
 
-/* ── Typing Role Cycling ─────────────────────────────────── */
+/* ── Daily Rotating Quote ─────────────────────────────────── */
+function renderDailyQuote() {
+  const el = $('#heroQuote');
+  if (!el) return;
+
+  const quotes = [
+    { text: "The quieter you become, the more you can hear.", author: "Ram Dass" },
+    { text: "Everything is theoretically impossible, until it is done.", author: "Robert A. Heinlein" },
+    { text: "In the middle of difficulty lies opportunity.", author: "Albert Einstein" },
+    { text: "Security is not a product, but a process.", author: "Bruce Schneier" },
+    { text: "The art of programming is the art of organizing complexity.", author: "Edsger W. Dijkstra" },
+    { text: "Design is not just what it looks like — design is how it works.", author: "Steve Jobs" },
+    { text: "Simplicity is the ultimate sophistication.", author: "Leonardo da Vinci" },
+    { text: "The best way to predict the future is to invent it.", author: "Alan Kay" },
+    { text: "First, solve the problem. Then, write the code.", author: "John Johnson" },
+    { text: "Any sufficiently advanced technology is indistinguishable from magic.", author: "Arthur C. Clarke" },
+    { text: "The only way to do great work is to love what you do.", author: "Steve Jobs" },
+    { text: "Code is like humor. When you have to explain it, it's bad.", author: "Cory House" },
+    { text: "Knowing yourself is the beginning of all wisdom.", author: "Aristotle" },
+    { text: "Privacy is not something that I'm merely entitled to, it's an absolute prerequisite.", author: "Marlon Brando" },
+    { text: "Every expert was once a beginner.", author: "Helen Hayes" },
+    { text: "The most dangerous phrase is: we've always done it this way.", author: "Grace Hopper" },
+    { text: "Good design is obvious. Great design is transparent.", author: "Joe Sparano" },
+    { text: "Curiosity is the engine of achievement.", author: "Ken Robinson" },
+    { text: "What we know is a drop. What we don't know is an ocean.", author: "Isaac Newton" },
+    { text: "The greatest glory is not in never failing, but in rising every time we fall.", author: "Confucius" },
+    { text: "An investment in knowledge pays the best interest.", author: "Benjamin Franklin" },
+    { text: "The more I learn, the more I realize how much I don't know.", author: "Albert Einstein" },
+    { text: "Perfection is achieved not when nothing more can be added, but when nothing can be taken away.", author: "Antoine de Saint-Exupéry" },
+    { text: "Stay hungry. Stay foolish.", author: "Steve Jobs" },
+    { text: "The details are not the details. They make the design.", author: "Charles Eames" },
+    { text: "Done is better than perfect.", author: "Sheryl Sandberg" },
+    { text: "Logic will get you from A to B. Imagination will take you everywhere.", author: "Albert Einstein" },
+    { text: "The real voyage of discovery consists not in seeking new landscapes, but in having new eyes.", author: "Marcel Proust" },
+    { text: "Make it work, make it right, make it fast.", author: "Kent Beck" },
+    { text: "It always seems impossible until it's done.", author: "Nelson Mandela" }
+  ];
+
+  // Pick quote based on day of year so it changes daily
+  const now   = new Date();
+  const start = new Date(now.getFullYear(), 0, 0);
+  const dayOfYear = Math.floor((now - start) / 86400000);
+  const q = quotes[dayOfYear % quotes.length];
+
+  el.innerHTML = `<span class="hq-open">"</span>${q.text}<span class="hq-close">"</span><span class="hq-author"> — ${q.author}</span>`;
+}
+
+
 function initTypingRole() {
   const wordEl = $('#trWord');
   if (!wordEl) return;

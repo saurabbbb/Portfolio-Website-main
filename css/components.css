@@ -307,6 +307,40 @@
   line-height: 1.7;
 }
 
+/* Daily rotating quote below name */
+.hero-quote {
+  margin-top: 20px;
+  margin-bottom: 0;
+  max-width: 54ch;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(0.9rem, 1.6vw, 1.05rem);
+  font-weight: 300;
+  color: var(--text-3);
+  line-height: 1.65;
+  letter-spacing: 0.01em;
+  opacity: 0;
+  animation: fade-in 0.9s var(--ease-expo) 1.6s forwards;
+}
+.hero-quote .hq-open,
+.hero-quote .hq-close {
+  color: var(--accent);
+  opacity: 0.6;
+  font-size: 1.25em;
+  line-height: 0;
+  vertical-align: -0.15em;
+}
+.hero-quote .hq-author {
+  display: block;
+  margin-top: 6px;
+  font-family: var(--font-mono);
+  font-style: normal;
+  font-size: clamp(9px, 1.1vw, 11px);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--text-4);
+}
+
 /* CTA buttons */
 .hero-cta {
   display: flex;
@@ -713,33 +747,40 @@
 }
 .project-list-item {
   display: grid;
-  grid-template-columns: 80px 1fr 200px 120px;
-  align-items: start;
+  grid-template-columns: 72px 1fr auto 100px;
+  align-items: center;
   gap: 0;
   border-bottom: 1px solid var(--border);
   position: relative;
   cursor: pointer;
   transition: background .25s var(--ease);
   overflow: hidden;
+  min-height: 100px;
+}
+/* When no thumbnail, collapse thumbnail column */
+.project-list-item:not(:has(.pli-thumb)) {
+  grid-template-columns: 72px 1fr auto;
 }
 .project-list-item:last-child { border-bottom: none; }
 .project-list-item:hover { background: var(--surface); }
 
 .pli-num {
-  padding: 28px 20px;
+  padding: 24px 16px 24px 20px;
   font-family: var(--font-mono);
-  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
   color: var(--border);
   font-weight: 700;
   line-height: 1;
   transition: color .3s var(--ease);
   align-self: center;
+  flex-shrink: 0;
 }
 .project-list-item:hover .pli-num { color: var(--accent); }
 
 .pli-body {
-  padding: 28px 24px 28px 0;
+  padding: 24px 24px 24px 20px;
   border-left: 1px solid var(--border);
+  align-self: center;
 }
 .pli-cat {
   font-family: var(--font-mono);
@@ -752,39 +793,41 @@
 .pli-title {
   font-family: var(--font-body);
   font-weight: 600;
-  font-size: clamp(1rem, 2.5vw, 1.3rem);
-  margin-bottom: 10px;
+  font-size: clamp(0.95rem, 2.2vw, 1.2rem);
+  margin-bottom: 8px;
   line-height: 1.25;
   letter-spacing: -.01em;
 }
 .pli-desc {
   color: var(--text-2);
-  font-size: 14px;
+  font-size: 13.5px;
   line-height: 1.65;
-  max-width: 64ch;
+  max-width: 62ch;
 }
 .pli-tech {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-  margin-top: 14px;
+  margin-top: 12px;
 }
 .pli-meta {
-  padding: 28px 24px;
+  padding: 24px 20px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
   align-self: center;
+  min-width: 120px;
+  border-left: 1px solid var(--border);
 }
 .pli-meta-row { display: flex; flex-direction: column; gap: 4px; }
 .pli-meta-label {
   font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: .1em;
+  font-size: 9px;
+  letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--text-3);
 }
-.pli-meta-value { font-size: 13.5px; color: var(--text-2); }
+.pli-meta-value { font-size: 13px; color: var(--text-2); font-weight: 500; }
 
 .placeholder-flag {
   font-family: var(--font-mono);
