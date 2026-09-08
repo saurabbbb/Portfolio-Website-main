@@ -8,7 +8,7 @@ const DATA = {
   person: {
     name:      "Saurabh Giri",
     role:      ["Cybersecurity", "Digital Forensics", "Code", "Design"],
-    statement: "I study how systems fail, then build the ones that shouldn't.",
+    statement: "Studying security, building things, and designing what matters.",
     location:  "Kathmandu, Nepal",
     subtitle:  "Security × Forensics × Code × Design"
   },
