@@ -102,11 +102,6 @@ p { line-height: 1.7; }
 }
 .chip:hover { border-color: var(--accent); color: var(--accent); }
 
-/* Noise grain overlay disabled to ensure silky-smooth, crystal-clear background without pixelation */
-body::after {
-  display: none;
-}
-
 /* ── REDUCED MOTION ──────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

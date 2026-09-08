@@ -52,10 +52,6 @@
   from { transform: translate(-50%,-50%) scale(.6); opacity: 0; }
   to   { transform: translate(-50%,-50%) scale(1);  opacity: 1; }
 }
-@keyframes hero-glow {
-  0%,100% { opacity: .08; transform: scale(1); }
-  50%      { opacity: .18; transform: scale(1.1); }
-}
 @keyframes glitch-1 {
   0%,100% { clip-path: inset(0 0 100% 0); transform: translateX(0); }
   20%     { clip-path: inset(15% 0 60% 0); transform: translateX(-4px); }
@@ -111,25 +107,6 @@
 
 /* ── NEW PREMIUM KEYFRAMES ──────────────────────────────── */
 
-/* Floating orb drift */
-@keyframes orb-float-1 {
-  0%   { transform: translate(0px, 0px) scale(1); }
-  25%  { transform: translate(60px, -40px) scale(1.08); }
-  50%  { transform: translate(20px, 60px) scale(0.95); }
-  75%  { transform: translate(-40px, 20px) scale(1.04); }
-  100% { transform: translate(0px, 0px) scale(1); }
-}
-@keyframes orb-float-2 {
-  0%   { transform: translate(0px, 0px) scale(1); }
-  33%  { transform: translate(-50px, 70px) scale(1.12); }
-  66%  { transform: translate(70px, -30px) scale(0.92); }
-  100% { transform: translate(0px, 0px) scale(1); }
-}
-@keyframes orb-float-3 {
-  0%   { transform: translate(0px, 0px) rotate(0deg); }
-  50%  { transform: translate(30px, -50px) rotate(180deg); }
-  100% { transform: translate(0px, 0px) rotate(360deg); }
-}
 
 /* Preloader counter tick */
 @keyframes pre-counter-tick {
@@ -160,12 +137,6 @@
   100% { letter-spacing: normal; }
 }
 
-/* Aurora sweep */
-@keyframes aurora-shift {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
 
 /* Card shimmer sweep */
 @keyframes card-shimmer {
@@ -518,10 +489,6 @@ body.cursor-clicking #cursor-ring {
 }
 
 
-/* ── BACKGROUND ORBS (disabled to prevent pixelation/banding) ─── */
-.bg-orbs {
-  display: none !important;
-}
 
 
 /* ── SCROLL REVEAL ───────────────────────────────────────── */
@@ -667,10 +634,6 @@ body.cursor-clicking #cursor-ring {
 }
 
 
-/* ── AURORA HERO BACKGROUND (disabled to prevent visual banding) ─── */
-.hero-aurora {
-  display: none !important;
-}
 
 
 /* ── MAGNETIC HOVER LINE ─────────────────────────────────── */
@@ -843,5 +806,4 @@ body.cursor-clicking #cursor-ring {
   .reveal, .reveal-left, .reveal-scale { opacity: 1; transform: none; }
   .hero-word-inner { transform: none; opacity: 1; }
   .char-split { opacity: 1; transform: none; }
-  .bg-orbs, .hero-aurora { display: none; }
 }

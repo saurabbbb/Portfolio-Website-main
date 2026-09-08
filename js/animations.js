@@ -18,34 +18,6 @@
 /* ── REDUCED MOTION CHECK ────────────────────────────────── */
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-/* ══════════════════════════════════════════════════════════
-   INJECT BACKGROUND ORBS
-   ══════════════════════════════════════════════════════════ */
-function injectBgOrbs() {
-  if (prefersReducedMotion) return;
-  const orbs = document.createElement('div');
-  orbs.className = 'bg-orbs';
-  orbs.setAttribute('aria-hidden', 'true');
-  orbs.innerHTML = `
-    <div class="bg-orb bg-orb-1"></div>
-    <div class="bg-orb bg-orb-2"></div>
-    <div class="bg-orb bg-orb-3"></div>
-  `;
-  document.body.insertBefore(orbs, document.body.firstChild);
-}
-
-/* ══════════════════════════════════════════════════════════
-   INJECT AURORA INTO HERO
-   ══════════════════════════════════════════════════════════ */
-function injectHeroAurora() {
-  if (prefersReducedMotion) return;
-  const hero = document.querySelector('.hero');
-  if (!hero) return;
-  const aurora = document.createElement('div');
-  aurora.className = 'hero-aurora';
-  aurora.setAttribute('aria-hidden', 'true');
-  hero.insertBefore(aurora, hero.firstChild);
-}
 
 /* ══════════════════════════════════════════════════════════
    PRELOADER — live counter + corner labels
@@ -118,7 +90,7 @@ function playHeroEntrance() {
       el.style.transform = 'translateY(0)';
       el.style.opacity   = '1';
     });
-    document.querySelectorAll('.hero-status, .hero-role-typing, .hero-desc, .hero-cta, .case-tag, .scroll-cue, .hero-coords').forEach(el => {
+    document.querySelectorAll('.hero-status, .hero-role-typing, .hero-quote, .hero-cta, .case-tag, .scroll-cue, .hero-coords').forEach(el => {
       el.style.opacity   = '1';
       el.style.transform = 'none';
     });
@@ -166,11 +138,11 @@ function playHeroEntrance() {
     y: 18, opacity: 0, duration: 0.7, ease: 'back.out(1.2)'
   }, 0.82);
 
-  // 5. Description — clip-path reveal
-  tl.from('.hero-desc', {
-    clipPath: 'inset(0 100% 0 0)',
+  // 5. Quote — smooth entrance
+  tl.from('.hero-quote', {
+    y: 16,
     opacity: 0,
-    duration: 0.9,
+    duration: 0.8,
     ease: 'expo.out'
   }, 0.95);
 
@@ -443,7 +415,6 @@ function initParallax() {
 
   const heroGrid   = document.querySelector('.hero-grid');
   const heroAmb    = document.querySelector('.hero-ambient');
-  const heroAurora = document.querySelector('.hero-aurora');
   if (!heroGrid) return;
 
   let ticking = false;
@@ -456,8 +427,7 @@ function initParallax() {
       const ratio = scrollY / max;
 
       heroGrid.style.transform  = `translateY(${ratio * 50}px)`;
-      if (heroAmb)    heroAmb.style.transform    = `translateY(${ratio * 30}px)`;
-      if (heroAurora) heroAurora.style.transform = `translateY(${ratio * 20}px)`;
+      if (heroAmb) heroAmb.style.transform = `translateY(${ratio * 30}px)`;
 
       ticking = false;
     });

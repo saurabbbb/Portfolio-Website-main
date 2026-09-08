@@ -730,33 +730,6 @@ function renderBeyond() {
     </div>
   `).join('');
 
-  // 3D tilt effect on beyond cards
-  initTiltCards();
-}
-
-
-function initTiltCards() {
-  const isTouch = window.matchMedia('(pointer: coarse)').matches;
-  if (isTouch || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-  $$('.beyond-card').forEach(card => {
-    const MAX_TILT = 8;
-    card.addEventListener('mousemove', e => {
-      const rect = card.getBoundingClientRect();
-      const cx   = rect.left + rect.width  / 2;
-      const cy   = rect.top  + rect.height / 2;
-      const dx   = (e.clientX - cx) / (rect.width  / 2);
-      const dy   = (e.clientY - cy) / (rect.height / 2);
-      card.style.transform = `perspective(600px) rotateX(${-dy * MAX_TILT}deg) rotateY(${dx * MAX_TILT}deg) translateZ(8px)`;
-      card.style.setProperty('--mx', ((e.clientX - rect.left) / rect.width * 100) + '%');
-      card.style.setProperty('--my', ((e.clientY - rect.top) / rect.height * 100) + '%');
-    });
-    card.addEventListener('mouseleave', () => {
-      card.style.transform = '';
-      card.style.transition = 'transform .6s cubic-bezier(.34,1.56,.64,1), background .3s';
-      setTimeout(() => { card.style.transition = ''; }, 600);
-    });
-  });
 }
 
 /* ══════════════════════════════════════════════════════════

@@ -297,14 +297,6 @@
 }
 .hero-role .x { color: var(--accent); opacity: .7; }
 
-/* Hero description */
-.hero-desc {
-  max-width: 52ch;
-  margin-top: 28px;
-  color: var(--text-2);
-  font-size: 1.08rem;
-  line-height: 1.7;
-}
 
 /* Daily rotating quote below Currently status */
 .hero-quote {
