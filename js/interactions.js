@@ -6,14 +6,16 @@
 
 'use strict';
 
-const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const isReducedMotion = typeof prefersReducedMotion !== 'undefined'
+  ? prefersReducedMotion
+  : window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const isTouch = window.matchMedia('(pointer: coarse)').matches;
 
 /* ══════════════════════════════════════════════════════════
    CUSTOM CURSOR
    ══════════════════════════════════════════════════════════ */
 function initCursor() {
-  if (isTouch || prefersReducedMotion) return;
+  if (isTouch || isReducedMotion) return;
 
   const dot  = document.getElementById('cursor-dot');
   const ring = document.getElementById('cursor-ring');
@@ -107,7 +109,7 @@ function initCursor() {
    MAGNETIC BUTTONS
    ══════════════════════════════════════════════════════════ */
 function initMagneticButtons() {
-  if (isTouch || prefersReducedMotion) return;
+  if (isTouch || isReducedMotion) return;
 
   document.querySelectorAll('.btn-magnetic').forEach(btn => {
     const strength = 0.35;

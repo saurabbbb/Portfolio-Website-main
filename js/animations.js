@@ -560,14 +560,15 @@ function initGSAPScrollEffects() {
     });
   }
 
-  // Timeline items — draw from center
+  // Timeline items — subtle reveal with clearProps so items never get stuck invisible
   gsap.utils.toArray('.tl-item').forEach((item, i) => {
     gsap.from(item, {
-      scrollTrigger: { trigger: item, start: 'top 88%', once: true },
-      x: i % 2 === 0 ? -28 : 28,
+      scrollTrigger: { trigger: item, start: 'top 92%', once: true },
+      y: 20,
       opacity: 0,
-      duration: 0.85,
-      ease: 'expo.out'
+      duration: 0.7,
+      ease: 'expo.out',
+      clearProps: 'opacity,transform'
     });
   });
 

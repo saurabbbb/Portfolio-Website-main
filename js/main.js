@@ -158,45 +158,35 @@ function renderDailyQuote() {
   if (!el) return;
 
   const quotes = [
-    { text: "The quieter you become, the more you can hear.", author: "Ram Dass" },
-    { text: "Everything is theoretically impossible, until it is done.", author: "Robert A. Heinlein" },
-    { text: "In the middle of difficulty lies opportunity.", author: "Albert Einstein" },
-    { text: "Security is not a product, but a process.", author: "Bruce Schneier" },
-    { text: "The art of programming is the art of organizing complexity.", author: "Edsger W. Dijkstra" },
-    { text: "Design is not just what it looks like — design is how it works.", author: "Steve Jobs" },
-    { text: "Simplicity is the ultimate sophistication.", author: "Leonardo da Vinci" },
-    { text: "The best way to predict the future is to invent it.", author: "Alan Kay" },
-    { text: "First, solve the problem. Then, write the code.", author: "John Johnson" },
-    { text: "Any sufficiently advanced technology is indistinguishable from magic.", author: "Arthur C. Clarke" },
-    { text: "The only way to do great work is to love what you do.", author: "Steve Jobs" },
-    { text: "Code is like humor. When you have to explain it, it's bad.", author: "Cory House" },
-    { text: "Knowing yourself is the beginning of all wisdom.", author: "Aristotle" },
-    { text: "Privacy is not something that I'm merely entitled to, it's an absolute prerequisite.", author: "Marlon Brando" },
-    { text: "Every expert was once a beginner.", author: "Helen Hayes" },
-    { text: "The most dangerous phrase is: we've always done it this way.", author: "Grace Hopper" },
-    { text: "Good design is obvious. Great design is transparent.", author: "Joe Sparano" },
-    { text: "Curiosity is the engine of achievement.", author: "Ken Robinson" },
-    { text: "What we know is a drop. What we don't know is an ocean.", author: "Isaac Newton" },
-    { text: "The greatest glory is not in never failing, but in rising every time we fall.", author: "Confucius" },
-    { text: "An investment in knowledge pays the best interest.", author: "Benjamin Franklin" },
-    { text: "The more I learn, the more I realize how much I don't know.", author: "Albert Einstein" },
-    { text: "Perfection is achieved not when nothing more can be added, but when nothing can be taken away.", author: "Antoine de Saint-Exupéry" },
-    { text: "Stay hungry. Stay foolish.", author: "Steve Jobs" },
-    { text: "The details are not the details. They make the design.", author: "Charles Eames" },
-    { text: "Done is better than perfect.", author: "Sheryl Sandberg" },
-    { text: "Logic will get you from A to B. Imagination will take you everywhere.", author: "Albert Einstein" },
-    { text: "The real voyage of discovery consists not in seeking new landscapes, but in having new eyes.", author: "Marcel Proust" },
-    { text: "Make it work, make it right, make it fast.", author: "Kent Beck" },
-    { text: "It always seems impossible until it's done.", author: "Nelson Mandela" }
+    "The quieter you become, the more you can hear.",
+    "Security is not a product, but a continuous process.",
+    "Observe, trace, analyze, and understand.",
+    "Simplicity is the prerequisite for reliability.",
+    "Understanding how systems fail is the first step to building them right.",
+    "First, solve the problem. Then, write the code.",
+    "Great design is making something complex feel intuitive.",
+    "Curiosity is the engine of technical insight.",
+    "The details are not just details — they define the craftsmanship.",
+    "The art of programming is the art of organizing complexity.",
+    "Build carefully, in public, one project at a time.",
+    "Done thoughtfully is better than rushed and fragile.",
+    "What you see is only the surface — trace the logic beneath.",
+    "Clear code, sound security, and deliberate design.",
+    "Every expert was once a student asking questions.",
+    "Good security makes resilience possible, not just defenses.",
+    "Design and code: two sides of how ideas meet reality.",
+    "In the middle of difficulty lies opportunity.",
+    "Make it work, make it right, make it resilient.",
+    "A habit of mind: curious, systematic, and patient."
   ];
 
-  // Pick quote based on day of year so it changes daily
-  const now   = new Date();
+  // Pick quote based on day of year so it rotates daily
+  const now = new Date();
   const start = new Date(now.getFullYear(), 0, 0);
   const dayOfYear = Math.floor((now - start) / 86400000);
   const q = quotes[dayOfYear % quotes.length];
 
-  el.innerHTML = `<span class="hq-open">"</span>${q.text}<span class="hq-close">"</span><span class="hq-author"> — ${q.author}</span>`;
+  el.innerHTML = `<span class="hero-quote-accent" aria-hidden="true"></span><span class="hero-quote-text">${q}</span>`;
 }
 
 
@@ -711,52 +701,16 @@ function renderJourney() {
     </div>
   `;
 
-  // Animate dots on scroll
-  const items = $$('.tl-item');
+  // Highlight active dot as user scrolls through milestones
+  const items = $$('.tl-item', container);
   const obs = new IntersectionObserver(entries => {
     entries.forEach(en => {
-      en.target.classList.toggle('active', en.isIntersecting);
+      if (en.isIntersecting) {
+        en.target.classList.add('active');
+      }
     });
-  }, { threshold: 0.4 });
+  }, { threshold: 0.25 });
   items.forEach(el => obs.observe(el));
-
-  // Animated SVG line that draws as user scrolls
-  initTimelineLine(container);
-}
-
-function initTimelineLine(container) {
-  // Wait for DOM paint
-  requestAnimationFrame(() => {
-    const col = container.querySelector('.tl-items-col');
-    if (!col) return;
-    const h = col.offsetHeight;
-    if (!h) return;
-
-    // Create SVG
-    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-    svg.setAttribute('id', 'tl-line-svg');
-    svg.setAttribute('width', '2');
-    svg.setAttribute('height', h);
-    svg.setAttribute('viewBox', `0 0 2 ${h}`);
-    svg.setAttribute('aria-hidden', 'true');
-    svg.innerHTML = `
-      <line id="tl-line-track" x1="1" y1="0" x2="1" y2="${h}" />
-      <line id="tl-line-progress" x1="1" y1="0" x2="1" y2="${h}"
-            stroke-dasharray="${h}" stroke-dashoffset="${h}" />`;
-    container.appendChild(svg);
-
-    const progress = svg.querySelector('#tl-line-progress');
-
-    function updateLine() {
-      const rect  = container.getBoundingClientRect();
-      const total = rect.height;
-      const vis   = Math.max(0, Math.min(total, window.innerHeight - rect.top));
-      const pct   = Math.min(1, vis / total);
-      progress.style.strokeDashoffset = h * (1 - pct);
-    }
-    window.addEventListener('scroll', updateLine, { passive: true });
-    updateLine();
-  });
 }
 
 /* ══════════════════════════════════════════════════════════
