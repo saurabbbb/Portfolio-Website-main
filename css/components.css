@@ -170,14 +170,13 @@
   transition: background .35s;
 }
 
-/* Slow ambient glow */
+/* Subtle ambient glow (smooth, static, non-popping) */
 .hero-ambient {
   position: absolute;
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  background: radial-gradient(ellipse 60% 50% at 50% 50%, var(--accent-soft), transparent 70%);
-  animation: hero-glow 8s ease-in-out infinite;
+  background: radial-gradient(ellipse 65% 55% at 50% 45%, rgba(198,134,46,.04), transparent 70%);
 }
 
 /* Hero corner grid coordinates (forensic detail) */
@@ -309,29 +308,18 @@
 
 /* Daily rotating quote below Currently status */
 .hero-quote {
-  margin-top: 20px;
+  margin-top: 24px;
   margin-bottom: 0;
-  max-width: 54ch;
-  display: flex;
-  align-items: center;
-  gap: 12px;
+  max-width: 56ch;
   font-family: var(--font-body);
   font-style: normal;
-  font-size: clamp(0.88rem, 1.25vw, 0.98rem);
+  font-size: clamp(1.04rem, 1.45vw, 1.16rem);
   font-weight: 400;
   color: var(--text-2);
-  line-height: 1.6;
-  letter-spacing: -0.005em;
+  line-height: 1.65;
+  letter-spacing: -0.015em;
   opacity: 0;
   animation: fade-in 0.8s var(--ease-expo) 1.2s forwards;
-}
-.hero-quote-accent {
-  width: 18px;
-  height: 2px;
-  background: var(--accent);
-  border-radius: 1px;
-  flex-shrink: 0;
-  opacity: 0.75;
 }
 .hero-quote-text {
   color: var(--text-2);

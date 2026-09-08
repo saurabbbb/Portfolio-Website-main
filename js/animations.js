@@ -729,14 +729,9 @@ function initPageLoadWipe() {
    INIT — All systems go
    ══════════════════════════════════════════════════════════ */
 document.addEventListener('DOMContentLoaded', () => {
-  // Inject dynamic elements first
-  injectBgOrbs();
-  injectHeroAurora();
-
   // Core animations
   initPreloader();
   initParallax();
-  initHeroSpotTracking();
 
   // Interaction effects
   initParticleTrail();

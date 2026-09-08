@@ -518,37 +518,9 @@ body.cursor-clicking #cursor-ring {
 }
 
 
-/* ── BACKGROUND ORBS ─────────────────────────────────────── */
+/* ── BACKGROUND ORBS (disabled to prevent pixelation/banding) ─── */
 .bg-orbs {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: -1;
-  overflow: hidden;
-}
-.bg-orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(120px);
-  will-change: transform;
-}
-.bg-orb-1 {
-  width: 600px; height: 600px;
-  background: radial-gradient(circle, rgba(198,134,46,.07) 0%, transparent 65%);
-  top: -10%; left: -5%;
-  animation: orb-float-1 20s ease-in-out infinite;
-}
-.bg-orb-2 {
-  width: 500px; height: 500px;
-  background: radial-gradient(circle, rgba(62,110,130,.06) 0%, transparent 65%);
-  bottom: 10%; right: -5%;
-  animation: orb-float-2 25s ease-in-out infinite;
-}
-.bg-orb-3 {
-  width: 300px; height: 300px;
-  background: radial-gradient(circle, rgba(198,134,46,.04) 0%, transparent 65%);
-  top: 40%; left: 50%;
-  animation: orb-float-3 30s linear infinite;
+  display: none !important;
 }
 
 
@@ -695,21 +667,9 @@ body.cursor-clicking #cursor-ring {
 }
 
 
-/* ── AURORA HERO BACKGROUND ──────────────────────────────── */
+/* ── AURORA HERO BACKGROUND (disabled to prevent visual banding) ─── */
 .hero-aurora {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    -45deg,
-    rgba(198,134,46,.04),
-    rgba(62,110,130,.03),
-    rgba(198,134,46,.06),
-    rgba(62,110,130,.02)
-  );
-  background-size: 400% 400%;
-  animation: aurora-shift 12s ease infinite;
-  pointer-events: none;
-  z-index: 0;
+  display: none !important;
 }
 
 
@@ -749,16 +709,15 @@ body.cursor-clicking #cursor-ring {
 .levitate-delay-3 { animation-delay: 1.5s; }
 
 
-/* ── HERO SPOT — enhanced glow ───────────────────────────── */
+/* ── HERO SPOT — smooth, non-popping subtle cursor glow ───────────── */
 .hero-spot {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 80% 60% at var(--mx,50%) var(--my,40%),
-    rgba(198,134,46,.09) 0%,
-    transparent 65%);
-  animation: hero-glow 6s ease-in-out infinite;
+  background: radial-gradient(circle 520px at var(--mx,50%) var(--my,35%),
+    rgba(198,134,46,.045) 0%,
+    transparent 68%);
   pointer-events: none;
-  transition: background .2s;
+  transition: background .15s ease-out;
 }
 
 

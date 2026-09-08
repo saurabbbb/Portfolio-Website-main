@@ -186,7 +186,7 @@ function renderDailyQuote() {
   const dayOfYear = Math.floor((now - start) / 86400000);
   const q = quotes[dayOfYear % quotes.length];
 
-  el.innerHTML = `<span class="hero-quote-accent" aria-hidden="true"></span><span class="hero-quote-text">${q}</span>`;
+  el.innerHTML = `<span class="hero-quote-text">${q}</span>`;
 }
 
 
